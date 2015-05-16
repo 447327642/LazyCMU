@@ -5,9 +5,9 @@
 (function (){
     var MyUtils = (function (){
 
-        var keys = ["form_id", "login_id", "login_value", "password_id", "password_value", "captcha_pic_id", "captcha_value"];
+        var keys = ["form_id", "login_id", "login_value", "password_id", "password_value"];
 
-        var ExtentionID = "gldpkdbfaapjnjlbajhhnjgpkamnllcn";
+        var ExtentionID = chrome.runtime.id;
 
         var getItem = function(name){
             return localStorage.getItem(name) || "";

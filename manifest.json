@@ -27,7 +27,7 @@
   "content_scripts": [
     {
       "matches": ["https://login.cmu.edu/idp/Authn/Stateless"],
-      "js": ["ocrad.js", "content.js"],
+      "js": ["content.js"],
       "run_at": "document_end"
     }
   ],

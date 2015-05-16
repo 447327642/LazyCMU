@@ -4,13 +4,13 @@
 (function init(){
     var MyUtils = (function (){
 
-        var keys = ["form_id", "login_id", "login_value", "password_id", "password_value", "captcha_pic_id", "captcha_value"];
+        var keys = ["form_id", "login_id", "login_value", "password_id", "password_value"];
         var messages = {
             saveSuccessMsg : "<div class='alert alert-success alert-dismissible' role='alert'><strong>Well done!</strong> You have saved all input.</div>",
             saveFillSuccessMsg : "<div class='alert alert-success alert-dismissible' role='alert'><strong>Well done!</strong> You have saved and filled all input.</div>",
             warningMsg : "<div class='alert alert-warning alert-dismissible' role='alert'><strong>Warning!</strong> Better check yourself, you're not looking too good.</div>"
         };
-        var ExtentionID = "gldpkdbfaapjnjlbajhhnjgpkamnllcn";
+        var ExtentionID = chrome.runtime.id;
         var saveItem = function(name, value){
             localStorage.setItem(name, value);
         };
@@ -96,6 +96,7 @@
             MyUtils.el("messages").innerHTML = MyUtils.getMsg("saveSuccessMsg");
         });
         MyUtils.el("fill-save").onclick = saveEvent(function(){
+            console.log(params);
             chrome.tabs.query({active:	true, currentWindow: true},
                 function(tabs)	{
                     chrome.tabs.sendMessage(tabs[0].id, params, function(response){

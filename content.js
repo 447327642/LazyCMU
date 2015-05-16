@@ -5,7 +5,7 @@
 
     var MyUtils = (function (){
 
-        var ExtentionID = "gldpkdbfaapjnjlbajhhnjgpkamnllcn";
+        var ExtentionID = chrome.runtime.id;
 
         return {
             ExtId : ExtentionID,
@@ -27,7 +27,6 @@
         };
     })();
 
-    var allowedType = ["email", "password", "text"];
 
     window.onload = function(){
 
@@ -36,23 +35,13 @@
         chrome.runtime.sendMessage(MyUtils.ExtId, "login_info", {}, function(response){
             var regex,
                 is_auto;
-            if (pageHTML.indexOf("alert-success") != -1){
-                return;
-            }
-            var suc = fillForm(response);
-            if (pageHTML.indexOf("alert-danger") != -1){
-                regex = /<div class="alert alert-danger" role="alert">(.*?)<\/div>/;
-                alert(regex.exec(pageHTML)[1]);
-                return;
-            }
-            console.log(response);
-            is_auto = (response.is_auto === "true");
-            if (!suc) {
-                alert("Parameter Error");
-                return;
-            }
-            if (suc && is_auto){
-                MyUtils.el(response.form_id).submit();
+            if (document.title == "login.cmu.edu") {
+                var suc = fillForm(response);
+                console.log(response);
+                is_auto = (response.is_auto === "true");
+                if (suc && is_auto && pageHTML.indexOf("Authentication failed.") == -1) {
+                    document.forms["query"]["submit"].click();
+                }
             }
         });
 
@@ -72,10 +61,8 @@
             message = {};
         //console.log(messages);
         try{
-            message[messages.form_id] = "form_id";
             message[messages.login_id] = messages["login_value"];
             message[messages.password_id] = messages["password_value"];
-            message[messages.captcha_value] = getOCR(messages["captcha_pic_id"]);
         }catch (ex){
             return false;
         }
@@ -86,10 +73,7 @@
                 return false;
             }
             item = MyUtils.el(key);
-            //console.log(item);
-            if (item && item.tagName.toLowerCase() == "form")
-                continue;
-            if (item && item.tagName.toLowerCase() == "input" && allowedType.indexOf(item.type.toLowerCase()) != -1){
+            if (item){
                 item.value = message[key];
             }
             else{
