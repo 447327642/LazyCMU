@@ -1,12 +1,12 @@
 {
-  "name": "AutomaticLgin",
+  "name": "AutomaticCMULgin",
   "manifest_version": 2,
 
   "version": "0.9",
 
   "content_security_policy": "script-src 'self'; object-src 'self'",
 
-  "description": "For CSCI4140",
+  "description": "For CMU students",
 
   "background": {
     "scripts": ["background.js"],
@@ -26,7 +26,7 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*.rhcloud.com/*"],
+      "matches": ["https://login.cmu.edu/idp/Authn/Stateless"],
       "js": ["ocrad.js", "content.js"],
       "run_at": "document_end"
     }
