@@ -4,7 +4,7 @@
 (function init(){
     var MyUtils = (function (){
 
-        var keys = ["form_id", "login_id", "login_value", "password_id", "password_value"];
+        var keys = ["login_value", "password_value"];
         var messages = {
             saveSuccessMsg : "<div class='alert alert-success alert-dismissible' role='alert'><strong>Well done!</strong> You have saved all input.</div>",
             saveFillSuccessMsg : "<div class='alert alert-success alert-dismissible' role='alert'><strong>Well done!</strong> You have saved and filled all input.</div>",
