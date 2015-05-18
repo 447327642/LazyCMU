@@ -38,8 +38,7 @@
 
                 MyUtils.el("j_username").value = response["login_value"];
                 MyUtils.el("j_password").value = response["password_value"];
-                is_auto = (response.is_auto == true);
-                console.log(response);
+                is_auto = (new Boolean(response.is_auto) == true);
                 if (is_auto && pageHTML.indexOf("Authentication failed.") == -1) {
                     document.forms["query"]["submit"].click();
                 }
