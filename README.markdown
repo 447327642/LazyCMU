@@ -16,14 +16,6 @@ You can get the source code of LazyCMU via its [GitHub Repo](https://github.com/
 
 		git clone https://github.com/wcyz666/LazyCMU.git
 
-##Troubleshoot
-> How to open the option page?
-
-Go to "chrome://extensions" (type it in the address bar)
-Click "option" under LazyCMU
-
-![firstTimeSetUp](https://raw.github.com/wcyz666/LazyCMU/master/images/firstTimeSetUp.png)
-
 ##Bug Report or Suggestion
 * Send an E-mail to <wcyz666@126.com>
 * Make a new [GitHub Issue](https://github.com/wcyz666/LazyCMU/issues)

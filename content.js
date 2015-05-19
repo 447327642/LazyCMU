@@ -13,9 +13,6 @@
                 var range = rg || document;
                 return range.getElementById(id);
             },
-            getMsg: function (what) {
-                return messages[what];
-            },
             qs : function(selector, rg){
                 var range = rg || document;
                 return range.querySelector(selector);
@@ -28,7 +25,7 @@
     })();
 
 
-    window.onload = function(){
+    document.onload = function(){
 
         var pageHTML = (document.getElementsByTagName("html")[0].innerHTML);
 
