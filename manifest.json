@@ -26,7 +26,8 @@
 
   "content_scripts": [
     {
-      "matches": ["https://login.cmu.edu/idp/Authn/Stateless"],
+      "matches": ["https://login.cmu.edu/idp/Authn/Stateless",
+                    "https://autolab.cs.cmu.edu/auth/users/sign_in"],
       "js": ["content.js"],
       "run_at": "document_end"
     }
