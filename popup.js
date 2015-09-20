@@ -49,14 +49,6 @@
             getMsg: function (what) {
                 return messages[what];
             },
-            qs : function(selector, rg){
-                var range = rg || document;
-                return range.querySelector(selector);
-            },
-            qsa : function(selector, rg){
-                var range = rg || document;
-                return range.querySelectorAll(selector);
-            }
         };
     })();
     window.addEventListener("load", function(){
