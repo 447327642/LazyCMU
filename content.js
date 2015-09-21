@@ -25,7 +25,7 @@
     if (url.indexOf("https://autolab.cs.cmu.edu/auth/users/sign_in") != -1){
         window.location.href = "https://autolab.cs.cmu.edu/auth/users/auth/shibboleth";
     }
-    else if (url.indexOf("https://oli.cmu.edu") != -1) {
+    else if (url.indexOf("http://oli.cmu.edu") != -1 || url.indexOf("https://oli.cmu.edu") != -1) {
         window.location.href = "https://oli.cmu.edu/jcourse/webui/login/webiso.do";
     }
     else if (url.indexOf("https://login.cmu.edu/idp/Authn/Stateless") != -1) {
