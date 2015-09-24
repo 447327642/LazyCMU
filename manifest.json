@@ -30,7 +30,8 @@
                     "https://autolab.cs.cmu.edu/auth/users/sign_in",
                     "https://oli.cmu.edu/",
                     "http://oli.cmu.edu/",
-                    "https://oli.cmu.edu/jcourse/webui/welcome.do*"
+                    "https://oli.cmu.edu/jcourse/webui/welcome.do*",
+                    "https://oli.cmu.edu/jcourse/webui/login/required.do*"
       ],
       "js": ["content.js"],
       "run_at": "document_end"
