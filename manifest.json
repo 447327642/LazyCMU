@@ -27,11 +27,13 @@
   "content_scripts": [
     {
       "matches": ["https://login.cmu.edu/idp/Authn/Stateless",
+                    "https://login.cmu.edu/idp/profile*",
                     "https://autolab.cs.cmu.edu/auth/users/sign_in",
                     "https://oli.cmu.edu/",
                     "http://oli.cmu.edu/",
                     "https://oli.cmu.edu/jcourse/webui/welcome.do*",
-                    "https://oli.cmu.edu/jcourse/webui/login/required.do*"
+                    "https://oli.cmu.edu/jcourse/webui/login/required.do*",
+                    "http://www.cmu.edu/career/tartantrak/tartantrakstudentlogin.html"
       ],
       "js": ["content.js"],
       "run_at": "document_end"
